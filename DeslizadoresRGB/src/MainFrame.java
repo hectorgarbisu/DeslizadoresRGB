@@ -43,6 +43,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Héctor Garbisu DIU 2015");
         setResizable(false);
 
         jSlider1.setToolTipText("");
