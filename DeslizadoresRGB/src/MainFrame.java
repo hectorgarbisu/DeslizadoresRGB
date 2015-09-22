@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Font;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -62,6 +63,9 @@ public class MainFrame extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jSlider1MousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSlider1MouseReleased(evt);
+            }
         });
 
         jSlider2.setFocusable(false);
@@ -69,6 +73,20 @@ public class MainFrame extends javax.swing.JFrame {
         jSlider2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSlider2StateChanged(evt);
+            }
+        });
+        jSlider2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jSlider2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jSlider2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jSlider2MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSlider2MouseReleased(evt);
             }
         });
 
@@ -80,6 +98,20 @@ public class MainFrame extends javax.swing.JFrame {
                 jSlider3StateChanged(evt);
             }
         });
+        jSlider3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jSlider3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jSlider3MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jSlider3MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSlider3MouseReleased(evt);
+            }
+        });
 
         jLabel1.setText("R:");
 
@@ -88,6 +120,11 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setText("B:");
 
         jTextField1.setText(" ");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setText(" ");
 
@@ -98,6 +135,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText(" ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -105,16 +143,16 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel4)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel4)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,8 +185,8 @@ public class MainFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +204,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -190,18 +228,63 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jSlider3StateChanged
 
     private void jSlider1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider1MouseEntered
-        jLabel4.setBackground(Color.red);
-        jLabel4.setAlignmentY(TOP_ALIGNMENT);
-        mouseEntered();
+        jLabel4.setForeground(Color.red);
+        jLabel4.setText("Dentro");
+
     }//GEN-LAST:event_jSlider1MouseEntered
 
     private void jSlider1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider1MouseExited
-        mouseExited();
+        jLabel4.setForeground(Color.black);
+        jLabel4.setText("Fuera");
     }//GEN-LAST:event_jSlider1MouseExited
 
     private void jSlider1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider1MousePressed
-        mousePressed();
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.BOLD));
     }//GEN-LAST:event_jSlider1MousePressed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jSlider1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider1MouseReleased
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.PLAIN));
+    }//GEN-LAST:event_jSlider1MouseReleased
+
+    private void jSlider2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider2MouseEntered
+        jLabel4.setForeground(Color.green);
+        jLabel4.setText("Dentro");
+    }//GEN-LAST:event_jSlider2MouseEntered
+
+    private void jSlider2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider2MouseExited
+        jLabel4.setForeground(Color.black);
+        jLabel4.setText("Fuera");
+    }//GEN-LAST:event_jSlider2MouseExited
+
+    private void jSlider2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider2MousePressed
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.BOLD));
+    }//GEN-LAST:event_jSlider2MousePressed
+
+    private void jSlider2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider2MouseReleased
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.PLAIN));
+    }//GEN-LAST:event_jSlider2MouseReleased
+
+    private void jSlider3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider3MouseEntered
+        jLabel4.setForeground(Color.blue);
+        jLabel4.setText("Dentro");
+    }//GEN-LAST:event_jSlider3MouseEntered
+
+    private void jSlider3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider3MouseExited
+        jLabel4.setForeground(Color.black);
+        jLabel4.setText("Fuera");
+    }//GEN-LAST:event_jSlider3MouseExited
+
+    private void jSlider3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider3MousePressed
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.BOLD));
+    }//GEN-LAST:event_jSlider3MousePressed
+
+    private void jSlider3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlider3MouseReleased
+        jLabel4.setFont(jLabel4.getFont().deriveFont(Font.PLAIN));
+    }//GEN-LAST:event_jSlider3MouseReleased
 
     /**
      * @param args the command line arguments
@@ -258,17 +341,7 @@ public class MainFrame extends javax.swing.JFrame {
         int greenV = jSlider2.getValue()*255/100;
         int blueV = jSlider3.getValue()*255/100;
         Color color = new Color(redV,greenV,blueV);
-        jPanel1.setBackground(color);    }
-
-    private void mouseEntered() {
-        jLabel4.setText("Dentro");
+        jPanel1.setBackground(color);   
     }
 
-    private void mouseExited() {
-        jLabel4.setText("Fuera");
-    }
-
-    private void mousePressed() {
-        jLabel4.setText("Pulsado");
-    }
 }
